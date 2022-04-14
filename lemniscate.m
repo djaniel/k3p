@@ -1,0 +1,13 @@
+function [X,dX,smax] =lemniscate(s,a,b,c,k)
+
+smax =k*2*pi;
+if ischar(s) 
+    s = 0:0.1:smax;
+end
+
+X= [a*sin(s/k);...
+    b*sin(2*s/k);...
+    c*sin(4*s/k)];
+dX=[a/k*cos(s/k);...
+    2/k*b*cos(2*s/k);...
+    4/k*c*cos(4*s/k)];
